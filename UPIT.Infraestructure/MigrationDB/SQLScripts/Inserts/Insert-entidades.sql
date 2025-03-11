@@ -1,0 +1,22 @@
+INSERT INTO Entidades (nombre, descripcion, fechaCreacion, fechaActualizacion)
+VALUES
+	('AEROCIVIL', 'Autoridad de Aviación Civil.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL', 'Entidad gubernamental local o regional.', '2024-07-03', '2024-07-03'),
+	('ANI', 'Agencia Nacional de Infraestructura.', '2024-07-03', '2024-07-03'),
+	('ANI - AEROCIVIL', 'Coordinación entre ANI y Aerocivil.', '2024-07-03', '2024-07-03'),
+	('INVIAS', 'Instituto Nacional de Vías.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL/INVIAS', 'Cooperación entre entidad territorial y INVIAS.', '2024-07-03', '2024-07-03'),
+	('INVIAS/ENTIDAD TERRITORIAL', 'Cooperación entre INVIAS y entidad territorial.', '2024-07-03', '2024-07-03'),
+	('ANI - UPIT', 'Coordinación entre ANI y UPIT.', '2024-07-03', '2024-07-03'),
+	('ANI/ENTIDAD TERRITORIAL', 'Cooperación entre ANI y entidad territorial.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL ', 'Entidad territorial (espacio adicional).', '2024-07-03', '2024-07-03'),
+	('UPIT', 'Unidad de Planeamiento de Infraestructura y Transporte.', '2024-07-03', '2024-07-03'),
+	('ANI/DNP', 'Coordinación entre ANI y Departamento Nacional de Planeación.', '2024-07-03', '2024-07-03'),
+	('EMPRESA FERREA REGIONAL', 'Empresa dedicada a la infraestructura ferroviaria regional.', '2024-07-03', '2024-07-03'),
+	('ANI/FINDETER', 'Coordinación entre ANI y FINDETER.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL - PROMOTORA FERROCARRIL DE ANTIOQUIA.', 'Entidad territorial promotora del Ferrocarril de Antioquia.', '2024-07-03', '2024-07-03'),
+	('CORMAGDALENA', 'Corporación Autónoma Regional del Río Grande de la Magdalena.', '2024-07-03', '2024-07-03'),
+	('PTSP', 'Plan de Transporte Sostenible del Puerto.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL/ANI', 'Cooperación entre entidad territorial y ANI.', '2024-07-03', '2024-07-03'),
+	('UMUS', 'Unidades Municipales de Asistencia Técnica.', '2024-07-03', '2024-07-03'),
+	('ENTIDAD TERRITORIAL/AEROCIVIL', 'Cooperación entre entidad territorial y Aerocivil.', '2024-07-03', '2024-07-03');

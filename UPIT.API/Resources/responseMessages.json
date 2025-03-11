@@ -1,0 +1,7 @@
+{
+  "Success": "Operation success",
+  "Error": "An error occurred.",
+  "NotFound": "Not found",
+  "MissingAuthorizationHeader": "Authorization header is missing or invalid",
+  "InvalidFormatPassword": "Invalid format password"
+}

@@ -1,0 +1,13 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/UPIT.API/bin/Debug/net8.0
+/UPIT.API/obj
+/UPIT.Domain/bin/Debug/net8.0
+/UPIT.Domain/obj
+/UPIT.Infraestructure/bin/Debug/net8.0
+/UPIT.Infraestructure/obj
+/UPIT.Application/bin/Debug/net8.0
+/UPIT.Application/obj

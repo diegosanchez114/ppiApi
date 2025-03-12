@@ -102,6 +102,15 @@ namespace UPIT.API
             services.AddTransient<IRoleScopeRepository, RoleScopeRepository>(sp => new RoleScopeRepository(connectionString, loggerDapper));
             services.AddTransient<IBlobStorageRepository, AzureBlobStorageRepository>(sp => new AzureBlobStorageRepository(connectionStringBlob, defaultContainerBlob));
             services.AddTransient<ILogsRepository, LogsRepository>(sp => new LogsRepository(connectionString, loggerDapper));
+
+            // Add CORS policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:4200", "https://upitwebexternal-a0fcase2fud7hzaz.eastus2-01.azurewebsites.net")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -112,18 +121,24 @@ namespace UPIT.API
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }            
+            }    
+
+            // Use CORS policy
+            app.UseCors("AllowSpecificOrigin");        
             
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
 
                 //CORS
-                app.UseCors(x =>
+               /* app.UseCors(x =>
                 {
                     if (env.IsDevelopment())
                     {
@@ -139,7 +154,7 @@ namespace UPIT.API
                         .WithMethods("GET", "POST")
                         .AllowCredentials();
                     }
-                });
+                });*/
             });            
         }
     }

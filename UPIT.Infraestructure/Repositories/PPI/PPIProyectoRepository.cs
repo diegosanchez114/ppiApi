@@ -174,10 +174,10 @@ namespace UPIT.Infraestructure.Repositories.PPI
 
             string sql = $"SELECT p.*, e.nombre AS NombreEntidad, " +
                 $"(SELECT COUNT(*) FROM PPI_Contratos c WHERE c.idProyecto = p.idProyecto) as CantContratos, " +
-                $"(SELECT pa.valor FROM Parametricas pa WHERE p.categoria = pa.Id) as NombreCategoria, " +
-                $"(SELECT pa.valor FROM Parametricas pa WHERE p.modo = pa.Id) as NombreModo, " +
-                $"(SELECT pa.valor FROM Parametricas pa WHERE p.programa = pa.Id) as NombrePrograma, " +
-                $"(SELECT pa.valor FROM Parametricas pa WHERE p.priorizacionInvias = pa.Id) as NombrePriorizacionInvias, " +
+                $"(SELECT pa.valor FROM Parametricas pa WHERE TRY_CONVERT(UNIQUEIDENTIFIER, p.categoria) = pa.Id) AS NombreCategoria, " +
+                $"(SELECT pa.valor FROM Parametricas pa WHERE TRY_CONVERT(UNIQUEIDENTIFIER, p.modo) = pa.Id) AS NombreModo, " +
+                $"(SELECT pa.valor FROM Parametricas pa WHERE TRY_CONVERT(UNIQUEIDENTIFIER, p.programa) = pa.Id) AS NombrePrograma, " +
+                $"(SELECT pa.valor FROM Parametricas pa WHERE TRY_CONVERT(UNIQUEIDENTIFIER, p.priorizacionInvias) = pa.Id) AS NombrePriorizacionInvias, " +
                 $"(SELECT SUM(c.valorContrato) FROM PPI_Contratos c JOIN PPI_Proyectos pr ON c.idProyecto = pr.idProyecto " +
                 $"WHERE c.idProyecto = p.idProyecto) as TotalValorProyecto, " +
                 $"(SELECT SUM(a.porcentajeEjecutado) FROM PPI_Avances a JOIN PPI_Contratos c ON a.idContrato = c.idContrato " +

@@ -78,6 +78,24 @@ namespace UPIT.API.Controllers
             }
         }
 
+        [HttpGet("byEmail/{email}")]
+        public async Task<IActionResult> GetAllByEmal(String email)
+        {
+            _logger.LogInformation("Start Get by Email");
+
+            try
+            {
+                var data = await _repository.GetByEmailAsync(email);
+                var response = new ApiResponseDTO<User>(true, _rm.GetSuccessMessage(), data);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                var response = new ApiResponseDTO<string>(false, _rm.GetErrorMessage(), ex.Message);
+                return BadRequest(response);
+            }
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] int page, [FromQuery] int limit, [FromQuery] string? filter)
         {

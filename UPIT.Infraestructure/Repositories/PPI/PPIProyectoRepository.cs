@@ -166,6 +166,7 @@ namespace UPIT.Infraestructure.Repositories.PPI
             if (limit <= 0)
                 limit = 10;
            
+            // Condicion que filtar por la entidad a la cual pertenece el usuario logeado.
             string condition = "WHERE p.idEntidadResponsable = @Id ";
 
             if (filter != null)                
